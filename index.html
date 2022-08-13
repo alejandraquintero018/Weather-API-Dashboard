@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Here I am linking Materialize into my html -->
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <title>Check the Weather</title>
@@ -19,71 +20,87 @@
     </header>
 
     <!--Input from materialize, this is where the user will enter the city -->
-    <div class="row">
-        <div class="input-field col s4">
-            <input id="city" type="text" class="validate">
-            <label class="active" for="city">City</label>
+    <div>
+        <h3>Search for a City:</h3>
+        <div class="row">
+            <div class="col s4">
+                <input id="city" type="text" class="validate">
+                <label class="active" for="city">City</label>
+            </div>
+            
+            <!--this is where the Javasctipt will populate the -->
+            <div class="col s8">
+                <div class="userimput"></div>
+                <div class="temp">Temprature: </div>
+                <div class="wind">Wind: </div>
+                <div class="hum">Humidity: </div>
+                <div class="uv">UV Index: </div>
+            </div>
         </div>
+        <div class="row">
+        <button class="btn waves-effect waves-light col s4" type="submit" name="action">Submit
+            <i class="material-icons right"></i>
+        </button>
     </div>
 
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right"></i>
-    </button>
+    </div>
 
-    <h3>5-Day Forecast</h3>
 
     <!--Section where all of the weather cards are being kept -->
-    <div class="container"></div>
-    <div class="row">
-        <div class="col s2 m2">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
-                </span>
+    <div class="container col s6 offset-s6">
+        <h4>5-Day Forecast:</h4>
+        <div class="row">
+            <div class="col s1 m2">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is
+                        called a
+                        panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+
+            <div class="col s1 m2">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is
+                        called a
+                        panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+
+            <div class="col s1 m2">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is
+                        called a
+                        panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+
+            <div class="col s1 m2">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is
+                        called a
+                        panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+
+            <div class="col s1 m2">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                        I am convenient because I require little markup to use effectively. I am similar to what is
+                        called a
+                        panel in other frameworks.
+                    </span>
+                </div>
             </div>
         </div>
 
-        <div class="col s2 m2">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
-                </span>
-            </div>
-        </div>
-
-        <div class="col s2 m2">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
-                </span>
-            </div>
-        </div>
-
-
-        <div class="col s2 m2">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
-                </span>
-            </div>
-        </div>
-
-
-        <div class="col s2 m2">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
-                </span>
-            </div>
-        </div>
-    </div>
-
-    </div>
     </div>
 
 

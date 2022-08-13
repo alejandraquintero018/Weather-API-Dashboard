@@ -1,5 +1,11 @@
 
 
-header{
-    background-image: linear-gradient(to right, red , yellow);
+header {
+    padding-top: 0%;
+    color: azure;
+    background-image: linear-gradient(to right, blue , purple);
+}
+
+.divider {
+    border-style: solid;
 }
