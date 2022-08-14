@@ -27,7 +27,7 @@
                 <input id="city" type="text" class="validate">
                 <label class="active" for="city">City</label>
             </div>
-            
+
             <!--this is where the Javasctipt will populate the Dashboard -->
             <div class="col s8" id="present">
                 <h3> <span id="usercity"></span></h3>
@@ -38,79 +38,82 @@
             </div>
         </div>
         <div class="row">
-        <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4" type="submit" name="action">Submit
-            <i class="material-icons right"></i>
-        </button>
-    </div>
+            <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4" type="submit"
+                name="action">Submit
+                <i class="material-icons right"></i>
+            </button>
+        </div>
 
     </div>
 
     <!--Section where all of the weather cards are being kept -->
-    <div class="container col s6 offset-s6 white-text">
-        <h4>5-Day Forecast:</h4>
-        <div class="row">
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day1"> 
-                        <div id="date1"></div>
-                        <div id="icon1"></div>
-                        <div id="temp1"></div>
-                        <div id="wind1"></div>
-                        <div id="hum1"></div>
-                    </span>
+    
+        <div class="container col s6 offset-s6 white-text hide">
+            <h4>5-Day Forecast:</h4>
+            <div class="row">
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day1">
+                            <div id="date1"></div>
+                            <div id="icon1"></div>
+                            <div id="temp1"></div>
+                            <div id="wind1"></div>
+                            <div id="hum1"></div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day2">
+                            <div><span id="date2"></span></div>
+                            <div id="icon2"></div>
+                            <div>Temp: <span id="temp2"></span></div>
+                            <div>Wind: <span id="wind2"></span> MPH</div>
+                            <div>Humidity: <span id="hum2"></span>%</div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day3">
+                            <div id="date3"></div>
+                            <div id="icon3"></div>
+                            <div id="temp3"></div>
+                            <div id="wind3"></div>
+                            <div id="hum3"></div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day4">
+                            <div id="date4"></div>
+                            <div id="icon4"></div>
+                            <div id="temp4"></div>
+                            <div id="wind4"></div>
+                            <div id="hum4"></div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day5">
+                            <div id="date5"></div>
+                            <div id="icon5"></div>
+                            <div id="temp5"></div>
+                            <div id="wind5"></div>
+                            <div id="hum5"></div>
+                        </span>
+                    </div>
                 </div>
             </div>
 
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day2">
-                        <div id="date2"></div>
-                        <div id="icon2"></div>
-                        <div id="temp2"></div>
-                        <div id="wind2"></div>
-                        <div id="hum2"></div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day3">
-                        <div id="date3"></div>
-                        <div id="icon3"></div>
-                        <div id="temp3"></div>
-                        <div id="wind3"></div>
-                        <div id="hum3"></div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day4">
-                        <div id="date4"></div>
-                        <div id="icon4"></div>
-                        <div id="temp4"></div>
-                        <div id="wind4"></div>
-                        <div id="hum4"></div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day5">
-                        <div id="date5"></div>
-                        <div id="icon5"></div>
-                        <div id="temp5"></div>
-                        <div id="wind5"></div>
-                        <div id="hum5"></div>
-                    </span>
-                </div>
-            </div>
         </div>
-
-    </div>
+ 
 
 
     <script src="script.js"></script>
