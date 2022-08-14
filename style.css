@@ -3,9 +3,11 @@
 header {
     padding-top: 0%;
     color: azure;
-    background-image: linear-gradient(to right, blue , purple);
+    background-image: linear-gradient(to right, rgb(1, 1, 181) , rgb(81, 9, 81));
 }
 
 .divider {
     border-style: solid;
 }
+
+

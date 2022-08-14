@@ -28,74 +28,83 @@
                 <label class="active" for="city">City</label>
             </div>
             
-            <!--this is where the Javasctipt will populate the -->
-            <div class="col s8">
-                <div class="userimput"></div>
-                <div class="temp">Temprature: </div>
-                <div class="wind">Wind: </div>
-                <div class="hum">Humidity: </div>
-                <div class="uv">UV Index: </div>
+            <!--this is where the Javasctipt will populate the Dashboard -->
+            <div class="col s8" id="present">
+                <h3> <span id="usercity"></span></h3>
+                <div>Temprature: <span id="temp"></span> F</div>
+                <div>Wind: <span id="wind"></span> MPH </div>
+                <div>Humidity: <span id="hum"></span> </div>
+                <div>UV Index: <span id="uv"></span> </div>
             </div>
         </div>
         <div class="row">
-        <button class="btn waves-effect waves-light col s4" type="submit" name="action">Submit
+        <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4" type="submit" name="action">Submit
             <i class="material-icons right"></i>
         </button>
     </div>
 
     </div>
 
-
     <!--Section where all of the weather cards are being kept -->
-    <div class="container col s6 offset-s6">
+    <div class="container col s6 offset-s6 white-text">
         <h4>5-Day Forecast:</h4>
         <div class="row">
             <div class="col s1 m2">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is
-                        called a
-                        panel in other frameworks.
+                <div class="card-panel blue darken-4">
+                    <span id="day1"> 
+                        <div id="date1"></div>
+                        <div id="icon1"></div>
+                        <div id="temp1"></div>
+                        <div id="wind1"></div>
+                        <div id="hum1"></div>
                     </span>
                 </div>
             </div>
 
             <div class="col s1 m2">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is
-                        called a
-                        panel in other frameworks.
+                <div class="card-panel blue darken-4">
+                    <span id="day2">
+                        <div id="date2"></div>
+                        <div id="icon2"></div>
+                        <div id="temp2"></div>
+                        <div id="wind2"></div>
+                        <div id="hum2"></div>
                     </span>
                 </div>
             </div>
 
             <div class="col s1 m2">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is
-                        called a
-                        panel in other frameworks.
+                <div class="card-panel blue darken-4">
+                    <span id="day3">
+                        <div id="date3"></div>
+                        <div id="icon3"></div>
+                        <div id="temp3"></div>
+                        <div id="wind3"></div>
+                        <div id="hum3"></div>
                     </span>
                 </div>
             </div>
 
             <div class="col s1 m2">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is
-                        called a
-                        panel in other frameworks.
+                <div class="card-panel blue darken-4">
+                    <span id="day4">
+                        <div id="date4"></div>
+                        <div id="icon4"></div>
+                        <div id="temp4"></div>
+                        <div id="wind4"></div>
+                        <div id="hum4"></div>
                     </span>
                 </div>
             </div>
 
             <div class="col s1 m2">
-                <div class="card-panel teal">
-                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is
-                        called a
-                        panel in other frameworks.
+                <div class="card-panel blue darken-4">
+                    <span id="day5">
+                        <div id="date5"></div>
+                        <div id="icon5"></div>
+                        <div id="temp5"></div>
+                        <div id="wind5"></div>
+                        <div id="hum5"></div>
                     </span>
                 </div>
             </div>

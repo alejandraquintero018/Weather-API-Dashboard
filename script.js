@@ -1,12 +1,76 @@
-
+let apiKey = "53f47a6135028751f9dd25e0e925cb7f"
 //document.querySelector('#city').addEventListener
 
-fetch (`https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}`).then(function(res){
+document.getElementById('submit').addEventListener('click', function(event){
+    event.preventDefault();
+    let cityName = document.getElementById('city').value; 
+    getWeather(cityName);
+    localStorage.setItem("city", cityName);
+    var getcity = localStorage.getItem("city");
+    document.getElementById("usercity").textContent = getcity;
+    document.getElementById('usercity').textContent
+});
+
+function getWeather(searchValue){
+fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=imperial&appid=${apiKey}`).then(function(res){
     return res.json();
 }).then(function(data){
     console.log(data);
-})
+    getUV(data.city.coord.lat, data.city.coord.lon);
+    todayWeather(data.city.coord.lat, data.city.coord.lon);
 
+    //day1
+    document.getElementById('date1').textContent = data.list[3].clouds.dt_txt;
+    document.getElementById('icon1').textContent = data.list[3].weather[0].icon;
+    document.getElementById('temp1').textContent = data.list[3].main.temp;
+    document.getElementById('wind1').textContent = data.list[3].wind.speed;
+    document.getElementById('hum1').textContent = data.list[3].main.humidity;
+    //day2
+    document.getElementById('date2').textContent = data.list[3].clouds.dt_txt;
+    document.getElementById('icon2').textContent = data.list[3].weather[0].icon;
+    document.getElementById('temp2').textContent = data.list[3].main.temp;
+    document.getElementById('wind2').textContent = data.list[3].wind.speed;
+    document.getElementById('hum2').textContent = data.list[3].main.humidity;
+    //day3
+    document.getElementById('date3').textContent = data.list[3].clouds.dt_txt;
+    document.getElementById('icon3').textContent = data.list[3].weather[0].icon;
+    document.getElementById('temp3').textContent = data.list[3].main.temp;
+    document.getElementById('wind3').textContent = data.list[3].wind.speed;
+    document.getElementById('hum3').textContent = data.list[3].main.humidity;
+    //day4
+    document.getElementById('date4').textContent = data.list[3].clouds.dt_txt;
+    document.getElementById('icon4').textContent = data.list[3].weather[0].icon;
+    document.getElementById('tem4').textContent = data.list[3].main.temp;
+    document.getElementById('wind4').textContent = data.list[3].wind.speed;
+    document.getElementById('hum4').textContent = data.list[3].main.humidity;;
+    //day 4
+    document.getElementById('date5').textContent = data.list[3].clouds.dt_txt;
+    document.getElementById('icon5').textContent = data.list[3].weather[0].icon;
+    document.getElementById('temp5').textContent = data.list[3].main.temp;
+    document.getElementById('wind5').textContent = data.list[3].wind.speed;
+    document.getElementById('hum5').textContent = data.list[3].main.humidity;
+
+})
+}
+function getUV(lat, lon){
+    fetch (`http://api.openweathermap.org/data/2.5/uvi?&lat=${lat}&lon=${lon}&appid=${apiKey}`).then(function(res){
+        return res.json();
+    }).then(function(data){
+        console.log(data);
+        document.getElementById('uv').textContent = data.value;
+    })
+}
+function todayWeather(lat, lon){
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`).then(function(res){
+        return res.json();
+    }).then(function(data){
+        console.log(data);
+    })
+}
+
+//local storage of the user input
+
+//create a span by the temp or it will be replaced 
 
 //$(document).ready(function() {
    // M.updateTextFields();
