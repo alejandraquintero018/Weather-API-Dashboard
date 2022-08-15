@@ -12,4 +12,30 @@ header {
 
 .show {
     display:contents;
+    color: white;
+}
+
+.mild{
+    background-color: green;
+    color: white;
+}
+
+.moderate{
+    background-color: yellow;
+    color: white;
+}
+
+.high{
+    background-color: orange;
+    color: white;
+}
+
+.very-high{
+    background-color: red;
+    color: white;
+}
+
+.severe{
+    background-color: purple;
+    color: white;
 }

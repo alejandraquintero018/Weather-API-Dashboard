@@ -1,4 +1,5 @@
 let apiKey = "53f47a6135028751f9dd25e0e925cb7f"
+let icon = 
 //document.querySelector('#city').addEventListener
 
 document.getElementById('submit').addEventListener('click', function(event){
@@ -11,6 +12,19 @@ document.getElementById('submit').addEventListener('click', function(event){
     document.querySelector(".container").setAttribute("class", "show");
 });
 
+
+//document.querySelector('.history').textContent = getcity;
+
+
+function geticon(searchValue){
+    fetch ('http://openweathermap.org/img/w/icon=${searchValue}.png').then(function(res){
+        return res.json();
+    }).then(function(data){
+        geticon(data.city.coord.lat, data.city.coord.lon);
+    })
+
+}
+
 function getWeather(searchValue){
 fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=imperial&appid=${apiKey}`).then(function(res){
     return res.json();
@@ -21,7 +35,7 @@ fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=
 
     //day1
     document.getElementById('date1').textContent = data.list[3].dt_txt;
-    document.getElementById('icon1').textContent = JSON.parse(data.list[3].weather[0].id);
+
     document.getElementById('temp1').textContent = data.list[3].main.temp;
     document.getElementById('wind1').textContent = data.list[3].wind.speed;
     document.getElementById('hum1').textContent = data.list[3].main.humidity;
@@ -57,7 +71,20 @@ function getUV(lat, lon){
         return res.json();
     }).then(function(data){
         console.log(data);
-        document.getElementById('uv').textContent = data.value;
+        let uvValue = data.value;
+        JSON.parse(uvValue);
+        document.getElementById('uv').textContent = uvValue;
+        if(uvValue < 3) {
+            document.querySelector("#uv").setAttribute("class", "mild")
+        }if(3 < uvValue < 6 ){
+            document.querySelector("#uv").setAttribute("class", "moderate")
+        }if (6 < uvValue < 8) {
+            document.querySelector("#uv").setAttribute("class", "high")
+        }if (8 < uvValue < 10) {
+            document.querySelector("#uv").setAttribute("class", "very-high")
+        }else {
+            document.querySelector("#uv").setAttribute("class", "severe")
+        }
     })
 }
 function todayWeather(lat, lon){
@@ -69,6 +96,8 @@ function todayWeather(lat, lon){
 }
 
 //local storage of the user input
+
+
 
 //create a span by the temp or it will be replaced 
 
