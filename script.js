@@ -16,8 +16,8 @@ document.getElementById('submit').addEventListener('click', function(event){
 //document.querySelector('.history').textContent = getcity;
 
 
-function geticon(searchValue){
-    fetch ('http://openweathermap.org/img/w/icon=${searchValue}.png').then(function(res){
+function geticon(icon){
+    fetch ('http://openweathermap.org/img/w/icon=${icon}.png').then(function(res){
         return res.json();
     }).then(function(data){
         geticon(data.city.coord.lat, data.city.coord.lon);
@@ -33,33 +33,36 @@ fetch (`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&units=
     getUV(data.city.coord.lat, data.city.coord.lon);
     todayWeather(data.city.coord.lat, data.city.coord.lon);
 
+    let geticon = data.list[11].weather[0].icon;
+    console.log(geticon);
+
     //day1
     document.getElementById('date1').textContent = data.list[3].dt_txt;
-
+    document.getElementById('icon1').src = `http://openweathermap.org/img/wn/${searchValue}1x.png`
     document.getElementById('temp1').textContent = data.list[3].main.temp;
     document.getElementById('wind1').textContent = data.list[3].wind.speed;
     document.getElementById('hum1').textContent = data.list[3].main.humidity;
     //day2
     document.getElementById('date2').textContent = data.list[11].dt_txt;
-    document.getElementById('icon2').textContent = data.list[11].weather[0].id;
+    document.getElementById('icon2').src = `http://openweathermap.org/img/wn/${geticon}1x.png`
     document.getElementById('temp2').textContent = data.list[11].main.temp;
     document.getElementById('wind2').textContent = data.list[11].wind.speed;
     document.getElementById('hum2').textContent = data.list[11].main.humidity;
     //day3
     document.getElementById('date3').textContent = data.list[19].dt_txt;
-    document.getElementById('icon3').textContent = data.list[19].weather[0].icon;
+    document.getElementById('icon3').src = `http://openweathermap.org/img/wn/id=${icon2}1x.png`
     document.getElementById('temp3').textContent = data.list[19].main.temp;
     document.getElementById('wind3').textContent = data.list[19].wind.speed;
     document.getElementById('hum3').textContent = data.list[19].main.humidity;
     //day4
     document.getElementById('date4').textContent = data.list[27].dt_txt;
-    document.getElementById('icon4').textContent = data.list[27].weather[0].icon;
+    document.getElementById('icon4').tsrc = `http://openweathermap.org/img/wn/${icon2}1x.png`
     document.getElementById('tem4').textContent = data.list[27].main.temp;
     document.getElementById('wind4').textContent = data.list[27].wind.speed;
     document.getElementById('hum4').textContent = data.list[27].main.humidity;;
     //day 5
     document.getElementById('date5').textContent = data.list[35].dt_txt;
-    document.getElementById('icon5').textContent = data.list[35].weather[0].icon;
+    document.getElementById('icon5').src = `http://openweathermap.org/img/wn/${icon2}1x.png`
     document.getElementById('temp5').textContent = data.list[35].main.temp;
     document.getElementById('wind5').textContent = data.list[35].wind.speed;
     document.getElementById('hum5').textContent = data.list[35].main.humidity;
