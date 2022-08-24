@@ -20,101 +20,108 @@
     </header>
 
     <!--Input from materialize, this is where the user will enter the city -->
-    <div>
-        <h3>Search for a City:</h3>
-        <div class="row">
-            <div class="col s4">
-                <input id="city" type="text" class="validate">
-                <label class="active" for="city">City</label>
-            </div>
-            <!--this is where the Javasctipt will populate the Dashboard for the current weather report -->
-            <div class="col s4 offset-s6" id="present">
-                <h3> <span id="usercity"></span></h3>
-                <div>Temprature: <span id="temp"></span> F</div>
-                <div>Wind: <span id="wind"></span> MPH </div>
-                <div>Humidity: <span id="hum"></span> </div>
-                <div>UV Index: <span id="uv"></span> </div>
-            </div>
-        </div>
-        <div class="row">
-            <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4" type="submit"
+    <!-- <h3 class="white-text">Search for a City:</h3> -->
+
+    <div class="row">
+        <!-- <h3 class="white-text">Search for a City:</h3> -->
+        <div class="col s3">
+            <h3 class="white-text">Search for a City:</h3>
+            <input id="city" type="text" class="white-text">
+            <label class="active white-text" for="city"></label>
+            <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4 p-4" type="submit"
                 name="action">Submit
                 <i class="material-icons right"></i>
             </button>
-            <div class="history"></div>
+            <!-- <div class="history"></div> -->
+        </div>
+
+        <div class="col s6 offset-s3 white-text" id="present">
+            <h3> <span id="usercity"></span></h3>
+            <img id="currenticon">
+            <div>Highest today: <span id="temphigh"></span> F</div>
+            <div>Lowest today: <span id="templow"></span> F</div>
+            <div>Wind: <span id="wind"></span> MPH </div>
+            <div>Humidity: <span id="hum"></span> % </div>
+            <div>UV Index: <span id="uv"></span> </div>
         </div>
     </div>
+
     <!--Section where all of the weather cards are being kept -->
-    <div class="container col s6 offset-s6 white-text hide">
-        <h4>5-Day Forecast:</h4>
-        <div class="row">
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day1">
-                        <div id="date1"></div>
-                        <img id="icon1">
-                        <div>Temp: <span id="temp1"></span></div>
-                        <div>Wind: <span id="wind1"></span> MPH</div>
-                        <div>Humidity: <span id="hum1"></span>%</div>
-                    </span>
+    <section>
+        <div id='cards' class="container col s6 offset-s1 white-text hide">
+            <h4>5-Day Forecast:</h4>
+            <div class="row">
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day1">
+                            <div id="date1"></div>
+                            <img id="icon1">
+                            <div>Temp: <span id="temp1"></span></div>
+                            <div>Wind: <span id="wind1"></span> MPH</div>
+                            <div>Humidity: <span id="hum1"></span>%</div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day2">
+                            <div><span id="date2"></span></div>
+                            <img id="icon2">
+                            <div>Temp: <span id="temp2"></span></div>
+                            <div>Wind: <span id="wind2"></span> MPH</div>
+                            <div>Humidity: <span id="hum2"></span>%</div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day3">
+                            <div id="date3"></div>
+                            <img id="icon3">
+                            <div>Temp: <span id="temp3"></span></div>
+                            <div>Wind: <span id="wind3"></span> MPH</div>
+                            <div>Humidity: <span id="hum3"></span>%</div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day4">
+                            <div id="date4"></div>
+                            <img id="icon4">
+                            <div>Temp: <span id="temp4"></span></div>
+                            <div>Wind: <span id="wind4"></span> MPH</div>
+                            <div>Humidity: <span id="hum4"></span>%</div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col s1 m2">
+                    <div class="card-panel blue darken-4">
+                        <span id="day5">
+                            <div id="date5"></div>
+                            <img id="icon5">
+                            <div>Temp: <span id="temp5"></span></div>
+                            <div>Wind: <span id="wind5"></span> MPH</div>
+                            <div>Humidity: <span id="hum5"></span>%</div>
+                        </span>
+                    </div>
                 </div>
             </div>
 
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day2">
-                        <div><span id="date2"></span></div>
-                        <img id="icon2">
-                        <div>Temp: <span id="temp2"></span></div>
-                        <div>Wind: <span id="wind2"></span> MPH</div>
-                        <div>Humidity: <span id="hum2"></span>%</div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day3">
-                        <div id="date3"></div>
-                        <img id="icon3">
-                        <div>Temp: <span id="temp3"></span></div>
-                        <div>Wind: <span id="wind3"></span> MPH</div>
-                        <div>Humidity: <span id="hum3"></span>%</div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day4">
-                        <div id="date4"></div>
-                        <img id="icon4">
-                        <div>Temp: <span id="temp4"></span></div>
-                        <div>Wind: <span id="wind4"></span> MPH</div>
-                        <div>Humidity: <span id="hum4"></span>%</div>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col s1 m2">
-                <div class="card-panel blue darken-4">
-                    <span id="day5">
-                        <div id="date5"></div>
-                        <img id="icon5">
-                        <div>Temp: <span id="temp5"></span></div>
-                        <div>Wind: <span id="wind5"></span> MPH</div>
-                        <div>Humidity: <span id="hum5"></span>%</div>
-                    </span>
-                </div>
-            </div>
         </div>
-
-    </div>
+    </section>
 
 
     <script src="script.js"></script>
     <!--This is where I link the materalize cdn to use in my html-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.4/dayjs.min.js"></script>
+
+
 </body>
 
 </html>

@@ -1,15 +1,24 @@
 
 
 header {
-    padding-top: 0%;
+    padding-top: 2%;
     color: azure;
-    background-image: linear-gradient(to right, rgb(1, 1, 181) , rgb(81, 9, 81));
+    background-image: linear-gradient(to bottom, rgb(122, 178, 221) , rgb(27, 58, 96));
 }
-
+section{
+    padding-top: 5%;
+}
+#present{
+    padding-top: 0%;
+}
 .divider {
     border-style: solid;
 }
 
+body{
+    background-image: url(/Users/alejandraquintero/Desktop/Weather-API-Dashboard/assets/BackGroundImage.jpeg);
+    background-size: cover;
+}
 .show {
     display:contents;
     color: white;
@@ -18,24 +27,29 @@ header {
 .mild{
     background-color: green;
     color: white;
+    border-radius: 20%;
 }
 
 .moderate{
     background-color: yellow;
     color: white;
+    border-radius: 20%;
 }
 
 .high{
     background-color: orange;
     color: white;
+    border-radius: 20%;
 }
 
 .very-high{
     background-color: red;
     color: white;
+    border-radius: 20%;
 }
 
 .severe{
     background-color: purple;
     color: white;
+    border-radius: 20%;
 }

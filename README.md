@@ -5,7 +5,7 @@
 - What was your motivation?
     My motivation behind this project was to utilize a web server API to gather data and populate my HTML page. 
 - Why did you build this project?
-    I built this project in order to practice styling using materialize, showcase my abilites in 
+    I built this project in order to practice styling using materialize whifh was a framework that I havent used before. Practice and showcase my abilites in being able to work with webserver API's 
 - What problem does it solve?
     It 
 - What did you learn?
