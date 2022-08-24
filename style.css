@@ -16,7 +16,7 @@ section{
 }
 
 body{
-    background-image: url(/Users/alejandraquintero/Desktop/Weather-API-Dashboard/assets/BackGroundImage.jpg);
+    background-image: url(./assets/BackGroundImage.jpg);
     background-size: cover;
 }
 .show {
