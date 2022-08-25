@@ -6,6 +6,7 @@ let historyEl = document.querySelector(".history");
 function search() {
  console.log(this);
  getWeather(this.value);
+ document.getElementById('usercity').textContent = (this.value); 
 }
 function searchHistory(){
     let storeHistory = localStorage.getItem('city')
@@ -26,7 +27,7 @@ function renderHistory(){
     historyEl.innerHTML = "" 
     for (let i = 0; i < userHistory.length; i++){
         var history = document.createElement("button");
-        history.setAttribute('class', 'btn waves-effect waves-light col s4 blue darken-4')
+        history.setAttribute('class', 'btn waves-effect waves-light blue darken-4 styling hoverable'); 
         history.setAttribute('value', userHistory[i])
         history.textContent = userHistory[i];
         history.addEventListener('click', search)
@@ -39,13 +40,11 @@ document.getElementById('submit').addEventListener('click', function (event) {
     let cityName = document.getElementById('city').value;
     getWeather(cityName);
     document.getElementById("usercity").textContent = cityName;
+    document.getElementById('present').setAttribute('class', 'show'); 
     // document.querySelector("#cards").setAttribute("class", "show");
     addHistory(cityName);
 });
 
-//local storage of the user input and output of that local storage
-
-//document.querySelector('.history').textContent = getcity;
 
 function geticon(icon) {
     fetch('http://openweathermap.org/img/w/icon=${icon}.png').then(function (res) {

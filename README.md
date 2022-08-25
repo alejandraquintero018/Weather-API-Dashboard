@@ -3,13 +3,13 @@
 ## Description
 
 - What was your motivation?
-    My motivation behind this project was to utilize a web server API to gather data and populate my HTML page. 
+    My motivation behind this project was to utilize a web server API to gather data and populate my HTML page. To use a framework I had not yet used. To use javascript commands that felt uncomfortable for me to use. 
 - Why did you build this project?
-    I built this project in order to practice styling using materialize whifh was a framework that I havent used before. Practice and showcase my abilites in being able to work with webserver API's 
+    I built this project in order to practice styling using materialize which was a framework that I havent used before. Practice and showcase my abilites in being able to work with webserver API's. I also wanted to challenge myself with the use of local storage which was once was a challenge for me to master. 
 - What problem does it solve?
-    It 
+    Some of the problems in my code was using Materialize as well as trying to use an API then using day.js to format a date given from the weather API. It used local storage which was a challenge for me before using this assignment to populate buttons of previous searches from the user and the user can click those buttons to then search the weather for the cities that they are intrested in. 
 - What did you learn?
-    I learned how to effectivily use a fetch request in JavaScript, I also was able to parse data from the API to manipulate it using. I learned how to use Materalize my layout. 
+    I learned how to effectivily use a fetch request in JavaScript, I also was able to parse data from the API to manipulate it using. I learned how to use Materalize my layout. I challenged myself to go above and beyond with the styling of the page.  
 
 
 ## Installation
@@ -21,13 +21,12 @@ https://alejandraquintero018.github.io/Weather-API-Dashboard/
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+As the user you want to check the weather, you enter the name of the city that you want to check the weather for. The webpage will populate the weather for the day and give you a five day weather forecast. The webpage will then make a button from the city that you searched for and as the user, you can click on that button to search for that city weather without having to type in the city again. 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![alt text](assets/ScreenShot1.png)
+
+![alt text](assets/ScreenShot2.png)
 
 ## Credits
 

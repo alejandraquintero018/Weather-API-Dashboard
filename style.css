@@ -15,6 +15,9 @@ section{
     border-style: solid;
 }
 
+#styling {
+    padding: 5%; 
+}
 body{
     background-image: url(./assets/BackGroundImage.jpg);
     background-size: cover;

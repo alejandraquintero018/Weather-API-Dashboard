@@ -18,36 +18,33 @@
     <header>
         <h1 class="center-align">Weather Dashboard </h1>
     </header>
+    <div class='container'>
+        <div class="row">
+            <div class="col s2 push-s9 history"></div>
+            <div class="col s3 pull-s2">
+                <h3 class="white-text">Search for a City:</h3>
+                <input id="city" type="text" class="white-text">
+                <label class="active white-text" for="city"></label>
+                <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4 p-4" type="submit"
+                    name="action">Submit
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
+            <div class="col s3 white-text" id="present">
+                <h3> <span id="usercity"></span></h3>
+                <img id="currenticon">
+                <div>Highest today: <span id="temphigh"></span> F</div>
+                <div>Lowest today: <span id="templow"></span> F</div>
+                <div>Wind: <span id="wind"></span> MPH </div>
+                <div>Humidity: <span id="hum"></span> % </div>
+                <div>UV Index: <span id="uv"></span> </div>
+            </div>
 
-    <!--Input from materialize, this is where the user will enter the city -->
-    <!-- <h3 class="white-text">Search for a City:</h3> -->
-
-    <div class="row">
-        <!-- <h3 class="white-text">Search for a City:</h3> -->
-        <div class="col s3">
-            <h3 class="white-text">Search for a City:</h3>
-            <input id="city" type="text" class="white-text">
-            <label class="active white-text" for="city"></label>
-            <button id="submit" class="btn waves-effect waves-light col s4 blue darken-4 p-4" type="submit"
-                name="action">Submit
-                <i class="material-icons right"></i>
-            </button>
-            <div class="history"></div>
-        </div>
-
-        <div class="col s6 offset-s3 white-text" id="present">
-            <h3> <span id="usercity"></span></h3>
-            <img id="currenticon">
-            <div>Highest today: <span id="temphigh"></span> F</div>
-            <div>Lowest today: <span id="templow"></span> F</div>
-            <div>Wind: <span id="wind"></span> MPH </div>
-            <div>Humidity: <span id="hum"></span> % </div>
-            <div>UV Index: <span id="uv"></span> </div>
         </div>
     </div>
 
     <!--Section where all of the weather cards are being kept -->
-    <section>
+    <div class="container">
         <div id='cards' class="container col s6 offset-s1 white-text hide">
             <h4>5-Day Forecast:</h4>
             <div class="row">
@@ -113,7 +110,7 @@
             </div>
 
         </div>
-    </section>
+    </div>
 
 
     <script src="script.js"></script>
