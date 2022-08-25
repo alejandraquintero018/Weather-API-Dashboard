@@ -3,34 +3,47 @@ let userHistory = [];
 let historyEl = document.querySelector(".history");
 //document.querySelector('#city').addEventListener
 
-
+function search() {
+ console.log(this);
+ getWeather(this.value);
+}
+function searchHistory(){
+    let storeHistory = localStorage.getItem('city')
+    if (storeHistory){
+        userHistory = JSON.parse(storeHistory);
+    }
+    renderHistory();
+}
+function addHistory(city){
+    if(userHistory.indexOf(city)!== -1){
+        return;
+    }
+    userHistory.push(city)
+    localStorage.setItem('city', JSON.stringify(userHistory))
+    renderHistory();
+}
+function renderHistory(){
+    historyEl.innerHTML = "" 
+    for (let i = 0; i < userHistory.length; i++){
+        var history = document.createElement("button");
+        history.setAttribute('class', 'btn waves-effect waves-light col s4 blue darken-4')
+        history.setAttribute('value', userHistory[i])
+        history.textContent = userHistory[i];
+        history.addEventListener('click', search)
+        historyEl.appendChild(history);
+    }
+}
 //button that returns the current weather as well as the 5-day forecast and stores the 
 document.getElementById('submit').addEventListener('click', function (event) {
     event.preventDefault();
     let cityName = document.getElementById('city').value;
     getWeather(cityName);
-    localStorage.setItem('city', cityName);
     document.getElementById("usercity").textContent = cityName;
-    document.querySelector("#cards").setAttribute("class", "show");
-
-    for (let i = 0; i < userHistory.length; i++){
-        let userHistory = localStorage.setItem('city', cityName);
-        var history = document.createElement("button");
-        history.setAttribute('class', 'btn waves-effect waves-light col s4 blue darken-4')
-        history.textContent = localStorage.getItem('city')
-        historyEl.append(history);
-    }
-    
+    // document.querySelector("#cards").setAttribute("class", "show");
+    addHistory(cityName);
 });
 
 //local storage of the user input and output of that local storage
- 
-    for (let i = 0; i < userHistory.length; i++){
- 
-    var history = document.createElement("button");
-    history.textContent = localStorage.getItem('city')
-    historyEl.append(history);
-}
 
 //document.querySelector('.history').textContent = getcity;
 
@@ -49,7 +62,7 @@ function getWeather(searchValue) {
         console.log(data);
         getUV(data.city.coord.lat, data.city.coord.lon);
         todayWeather(data.city.coord.lat, data.city.coord.lon);
-
+        document.querySelector("#cards").setAttribute("class", "show");
         //day1
         let getDate1 = data.list[5].dt_txt;
         let formatDate1 = dayjs(getDate1).format('dddd, MMMM D, ha');
@@ -135,6 +148,7 @@ function todayWeather(lat, lon) {
     });
 }
 
+searchHistory();
 //local storage of the user input
 
 
